@@ -24,3 +24,14 @@ def upload_files(host, user, passwd, local_path, remote_path, port=22):
         sftp.close()
     if transport:
         transport.close()
+
+
+def ssh_getout(host, user, passwd, cmd, port=22):
+    client = paramiko.SSHClient()
+    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    client.connect(hostname=host, username=user, password=passwd, port=port)
+    stdin, stdout, stderr = client.exec_command(cmd)
+    out = (stdout.read() + stderr.read()).decode("utf-8")
+    client.close()
+    return out
+    
