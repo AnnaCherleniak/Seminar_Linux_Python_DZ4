@@ -1,0 +1,11 @@
+user: user2
+passwd: '11'
+local_path: tests/p7zip-full.deb
+remote_path: /home/user2/p7zip-full.deb
+host: 0.0.0.0
+port: 22
+PATH_IN: /home/user2/test
+PATH_OUT: /home/user2/out
+PATH_EXIT: /home/user2/folder1
+PATH_EXIT2: /home/user2/folder2
+count: 3
